@@ -167,7 +167,7 @@
 		},
 
 		_getSeparators : function() {
-			var re = '', i, str = this.editor.getParam('spellchecker_word_separator_chars', '\\s!"#$%&()*+,-./:;<=>?@[\]^_{|}§©«®±¶·¸»¼½¾¿×÷¤\u201d\u201c');
+			var re = '', i, str = this.editor.getParam('spellchecker_word_separator_chars', '\\s!"#$%&()*+,-./:;<=>?@[\]^_{|}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\u201d\u201c');
 
 			// Build word separator regexp
 			for (i=0; i<str.length; i++)
@@ -245,7 +245,6 @@
 					// using DOM methods instead of innerHTML.
 					// Bug #3124: <PRE> elements content is broken after spellchecking.
 					// Bug #1408: Preceding whitespace characters are removed
-					// @TODO: I'm not sure that both are still issues on IE9.
 					if (tinymce.isIE) {
 						// Enclose mispelled words with temporal tag
 						v = v.replace(rx, '$1<mcespell>$2</mcespell>');

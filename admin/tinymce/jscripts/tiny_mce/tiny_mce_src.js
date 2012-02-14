@@ -6426,7 +6426,6 @@ var Expr = Sizzle.selectors = {
 				match[3] = test[3] - 0;
 			}
 
-			// TODO: Move to normal caching system
 			match[0] = done++;
 
 			return match;
@@ -8182,7 +8181,7 @@ window.tinymce.dom.Sizzle = Sizzle;
 		normalize : function() {
 			var self = this, rng, normalized;
 
-			// TODO:
+
 			// Retain selection direction.
 			// Lean left/right on Gecko for inline elements.
 			// Run this on mouse up/key up when the user manually moves the selection
@@ -8204,7 +8203,6 @@ window.tinymce.dom.Sizzle = Sizzle;
 				}
 
 				// If the container is body try move it into the closest text node or position
-				// TODO: Add more logic here to handle element selection cases
 				if (container === body) {
 					// Resolve the index
 					if (container.hasChildNodes()) {
@@ -8488,7 +8486,6 @@ window.tinymce.dom.Sizzle = Sizzle;
 			}
 		});
 
-		// Fix list elements, TODO: Replace this later
 		if (settings.fix_list_elements) {
 			htmlParser.addNodeFilter('ul,ol', function(nodes, name) {
 				var i = nodes.length, node, parentNode;
@@ -10675,7 +10672,6 @@ tinymce.create('tinymce.ui.ToolbarGroup:tinymce.ui.Container', {
 		var t = this, h = [], controls = t.controls, each = tinymce.each, settings = t.settings;
 
 		h.push('<div id="' + t.id + '" role="group" aria-labelledby="' + t.id + '_voice">');
-		//TODO: ACC test this out - adding a role = application for getting the landmarks working well.
 		h.push("<span role='application'>");
 		h.push('<span id="' + t.id + '_voice" class="mceVoiceLabel" style="display:none;">' + dom.encode(settings.name) + '</span>');
 		each(controls, function(toolbar) {
@@ -11669,7 +11665,6 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 			}
 
 			// Create iframe
-			// TODO: ACC add the appropriate description on this.
 			n = DOM.add(o.iframeContainer, 'iframe', { 
 				id : t.id + "_ifr",
 				src : u || 'javascript:""', // Workaround for HTTPS warning in IE6/7
@@ -13355,7 +13350,6 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 
 				// WebKit produces lists within block elements so we need to split them
 				// we will replace the native list creation logic to custom logic later on
-				// TODO: Remove this when the list creation logic is removed
 				listElm = dom.getParent(selection.getNode(), 'ol,ul');
 				if (listElm) {
 					listParent = listElm.parentNode;
@@ -16026,7 +16020,6 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 							endContainer = leaf.node;
 							endContainer.splitText(leaf.offset - 1);
 						} else if (leaf.node.previousSibling) {
-							// TODO: Figure out why this is in here
 							//endContainer = leaf.node.previousSibling;
 						}
 					}

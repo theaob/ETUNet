@@ -138,7 +138,6 @@
 				tinyMCE.execCommand('createlink',false, matches[1] + matches[2]);
 				ed.selection.moveToBookmark(bookmark);
 
-				// TODO: Determine if this is still needed.
 				if (tinyMCE.isWebKit) {
 					// move the caret to its original position
 					ed.selection.collapse(false);
